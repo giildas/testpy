@@ -10,11 +10,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 import faiss
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from functions import calcul_metrics
+# from functions import calcul_metrics
+from functions import calcul_metrics as calc_metrics
 
 
 # Patch des requetes serveurs avant l'importation de app.py
-@patch('requests.get') 
+@patch('requests.get')
 def test_example(mock_get):
     # Simule une réponse de type "200 OK"
     mock_get.return_value.status_code = 200
@@ -22,7 +23,7 @@ def test_example(mock_get):
 
     # Teste la fonction qui effectue la requête HTTP
     response = requests.get('http://127.0.0.1:5001/api/test')
-    
+
     # Vérifie la réponse
     assert response.status_code == 200
     assert response.text == 'OK'
@@ -30,10 +31,10 @@ def test_example(mock_get):
 def test_calcul_metrics():
     # Données factices pour le test
     y_true_contxt = [(1, 'agree'), (2, 'disagree'), (3, 'agree'), (4, 'agree')]  # Valeurs réelles avec feedback
-    y_pred_contxt = [(1, 1), (2, 0), (3, 1), (4, 0)] 
+    y_pred_contxt = [(1, 1), (2, 0), (3, 1), (4, 0)]
 
     # Appel de la fonction calcul_metrics
-    accuracy_contxt, precision_contxt, recall_contxt, f1_contxt = calcul_metrics(y_true_contxt, y_pred_contxt)
+    accuracy_contxt, precision_contxt, recall_contxt, f1_contxt = calc_metrics(y_true_contxt, y_pred_contxt)
 
     # Vérifier que la fonction retourne bien quatre valeurs
     assert isinstance(accuracy_contxt, float), "accuracy_contxt doit être un float"
@@ -95,7 +96,7 @@ def test_best_skill(mock_load):
 def client():
     # Ajout du répertoire parent au sys.path
     sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-    
+
     # Importation de l'application Flask après avoir mocké mlflow
     from app import app
     with app.test_client() as client:
