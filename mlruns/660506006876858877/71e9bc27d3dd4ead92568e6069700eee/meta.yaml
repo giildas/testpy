@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/71e9bc27d3dd4ead92568e6069700eee/artifacts
+end_time: 1733388174652
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 71e9bc27d3dd4ead92568e6069700eee
+run_name: simplon
+run_uuid: 71e9bc27d3dd4ead92568e6069700eee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733388174060
+status: 3
+tags: []
+user_id: Utilisateur

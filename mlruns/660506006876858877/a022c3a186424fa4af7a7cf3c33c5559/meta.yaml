@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/a022c3a186424fa4af7a7cf3c33c5559/artifacts
+end_time: 1731839871628
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: a022c3a186424fa4af7a7cf3c33c5559
+run_name: model_metrics_train_2
+run_uuid: a022c3a186424fa4af7a7cf3c33c5559
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731839812753
+status: 3
+tags: []
+user_id: Utilisateur

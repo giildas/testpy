@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1734276135980
+current_stage: Staging
+description: ''
+last_updated_timestamp: 1734276149369
+name: rfc_1
+run_id: c37bc19556304163831b07a4bda68df4
+run_link: ''
+source: mlflow-artifacts:/479232354214597008/c37bc19556304163831b07a4bda68df4/artifacts/new_rfc_1
+status: READY
+status_message: null
+user_id: null
+version: 5

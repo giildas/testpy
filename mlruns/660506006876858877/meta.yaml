@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/660506006876858877
+creation_time: 1730817563899
+experiment_id: '660506006876858877'
+last_update_time: 1730817563899
+lifecycle_stage: active
+name: Monitoring des perf des modèles PCO

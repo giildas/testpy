@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/47d1d910764d4bcba862ba25768872c9/artifacts
+end_time: 1731941730013
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 47d1d910764d4bcba862ba25768872c9
+run_name: crapoute
+run_uuid: 47d1d910764d4bcba862ba25768872c9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731941729755
+status: 3
+tags: []
+user_id: Utilisateur

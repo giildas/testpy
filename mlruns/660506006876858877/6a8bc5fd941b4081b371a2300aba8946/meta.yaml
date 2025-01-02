@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/6a8bc5fd941b4081b371a2300aba8946/artifacts
+end_time: 1730986040550
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 6a8bc5fd941b4081b371a2300aba8946
+run_name: poufi
+run_uuid: 6a8bc5fd941b4081b371a2300aba8946
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730986040393
+status: 3
+tags: []
+user_id: Utilisateur

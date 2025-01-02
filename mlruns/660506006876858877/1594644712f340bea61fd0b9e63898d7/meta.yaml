@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/1594644712f340bea61fd0b9e63898d7/artifacts
+end_time: 1731253729273
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 1594644712f340bea61fd0b9e63898d7
+run_name: tchouc
+run_uuid: 1594644712f340bea61fd0b9e63898d7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731253728879
+status: 3
+tags: []
+user_id: Utilisateur

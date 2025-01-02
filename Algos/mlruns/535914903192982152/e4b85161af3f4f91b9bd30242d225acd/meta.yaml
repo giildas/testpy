@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Utilisateur/Documents/Prepa_Diplome/PCO_nov/Algos/mlruns/535914903192982152/e4b85161af3f4f91b9bd30242d225acd/artifacts
+end_time: 1731340608156
+entry_point_name: ''
+experiment_id: '535914903192982152'
+lifecycle_stage: active
+run_id: e4b85161af3f4f91b9bd30242d225acd
+run_name: model_metrics_train_1
+run_uuid: e4b85161af3f4f91b9bd30242d225acd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731340451988
+status: 3
+tags: []
+user_id: Utilisateur

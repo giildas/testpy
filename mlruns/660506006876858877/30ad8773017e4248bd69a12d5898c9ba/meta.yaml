@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/30ad8773017e4248bd69a12d5898c9ba/artifacts
+end_time: 1734192467699
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 30ad8773017e4248bd69a12d5898c9ba
+run_name: bloub
+run_uuid: 30ad8773017e4248bd69a12d5898c9ba
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734192467479
+status: 3
+tags: []
+user_id: Utilisateur

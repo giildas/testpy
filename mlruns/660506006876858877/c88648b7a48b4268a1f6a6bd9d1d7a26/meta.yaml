@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/c88648b7a48b4268a1f6a6bd9d1d7a26/artifacts
+deleted_time: 1734274300964
+end_time: 1734271647619
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: deleted
+run_id: c88648b7a48b4268a1f6a6bd9d1d7a26
+run_name: Suivi Algo_2
+run_uuid: c88648b7a48b4268a1f6a6bd9d1d7a26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734271647491
+status: 4
+tags: []
+user_id: Utilisateur

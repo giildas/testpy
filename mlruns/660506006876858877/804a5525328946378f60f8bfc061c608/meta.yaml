@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/804a5525328946378f60f8bfc061c608/artifacts
+end_time: 1734774035997
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 804a5525328946378f60f8bfc061c608
+run_name: coucou
+run_uuid: 804a5525328946378f60f8bfc061c608
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1734774035642
+status: 3
+tags: []
+user_id: Utilisateur

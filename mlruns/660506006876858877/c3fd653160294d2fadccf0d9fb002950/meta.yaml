@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/c3fd653160294d2fadccf0d9fb002950/artifacts
+end_time: 1731003524138
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: c3fd653160294d2fadccf0d9fb002950
+run_name: bibilou
+run_uuid: c3fd653160294d2fadccf0d9fb002950
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731003523772
+status: 3
+tags: []
+user_id: Utilisateur

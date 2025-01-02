@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/22d26dcc41eb4c71bca04b4570d83962/artifacts
+end_time: 1731939222218
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 22d26dcc41eb4c71bca04b4570d83962
+run_name: unleashed-chimp-463
+run_uuid: 22d26dcc41eb4c71bca04b4570d83962
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731939201817
+status: 3
+tags: []
+user_id: Utilisateur

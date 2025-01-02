@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/4cdc725b80f04344a4428bb4639e0723/artifacts
+end_time: 1730821307513
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: 4cdc725b80f04344a4428bb4639e0723
+run_name: bidule
+run_uuid: 4cdc725b80f04344a4428bb4639e0723
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730821307304
+status: 3
+tags: []
+user_id: Utilisateur

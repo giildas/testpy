@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/aba35d14679d471c98fb5d602de7776d/artifacts
+end_time: 1732468650336
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: aba35d14679d471c98fb5d602de7776d
+run_name: plouti
+run_uuid: aba35d14679d471c98fb5d602de7776d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732468650139
+status: 3
+tags: []
+user_id: Utilisateur

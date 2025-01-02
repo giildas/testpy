@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/660506006876858877/e334752ab2f441f0aee536ce15e8c30a/artifacts
+end_time: 1731939229956
+entry_point_name: ''
+experiment_id: '660506006876858877'
+lifecycle_stage: active
+run_id: e334752ab2f441f0aee536ce15e8c30a
+run_name: bemused-rat-754
+run_uuid: e334752ab2f441f0aee536ce15e8c30a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731939222325
+status: 3
+tags: []
+user_id: Utilisateur
