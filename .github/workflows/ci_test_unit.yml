@@ -38,6 +38,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Check installed packages
+        run: pip list
+
       # Exécution des tests unitaires
       - name: Run unit tests with pytest
         run: |
