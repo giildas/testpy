@@ -38,7 +38,7 @@ def correct_maj_ds_mot(text):
     return corrected_text
 
 # Fonction pour uniformiser la ponctuation et la forme de chaque offre en amont de la segmentation
-# but : paragraphe clean avec ponctuation 
+# but : paragraphe clean avec ponctuation
 
 def clean_text(text):
     text = correct_maj_ds_mot(text)
@@ -47,7 +47,7 @@ def clean_text(text):
     text = re.sub(r'\s*([.,;:!?\(\)])\s*', r'\1 ', text)
     text = re.sub(r'\s+', ' ', text)
     text = text.strip()
-    
+
     return text
 
 # Fonction pour segmenter l'offre sur la base de la ligne
@@ -56,24 +56,24 @@ def split_on_newlines(doc):
     for sent in doc.sents:
         sent_text = re.sub(r'[.;:](?![.]{2})', '\n', sent.text)
         sent_text = sent_text.replace('),', ')\n')
-        
+
         # Nettoyage du texte pour enlever les caractères indésirables
         sent_text = re.sub(r'[^\w\s\'\(\)\%\+/]', ' ', sent_text)
-        
+
         # Créer une variable doc pour appliquer NER et segmentation par verbes
         doc_segment = nlp(sent_text)
-        
+
         modified_segment = []
         verb_count = 0
         ignore_verbs = 0  # Compteur pour ignorer certains verbes
         for i, token in enumerate(doc_segment):
             if token.pos_ == 'VERB':
                 verb_count += 1
-                
+
                 # Vérifier si le verbe est utilisé comme adjectif ou participe présent
                 if token.tag_ in ['VPP', 'VPR', 'ADJ'] or token.dep_ in ['amod', 'acl']:
                     ignore_verbs += 1
-                
+
                 if verb_count - ignore_verbs == 2:  # Segmentation si 2e verbe non ignoré
                     # Vérifier s'il y a "et" entre les deux verbes
                     if not (i > 1 and doc_segment[i-1].text.lower() == "et" and doc_segment[i-2].pos_ == 'VERB'):
@@ -84,26 +84,26 @@ def split_on_newlines(doc):
                             modified_segment.append('\n')
                     verb_count = 0  # Réinitialiser le compteur de verbes
                     ignore_verbs = 0  # Réinitialiser le compteur des verbes ignorés
-            
+
             # Ajouter la condition pour le caractère "+"
             if token.text == "+":
                 modified_segment.append('\n')
-            
+
             modified_segment.append(token.text)
-        
+
         # Joindre les tokens pour former la phrase segmentée
         sent_text_final = ' '.join(modified_segment)
-    
+
         # Séparation par des sauts de ligne simples
         segments = sent_text_final.split('\n')
         for segment in segments:
             segment = segment.strip()
-            
+
             if len(segment) == 1 or not segment or re.match(r'^[^\w\s]+$', segment):
                 continue
 
             lines.append(segment)
-    
+
     return lines
 
 # Fonction finale à appliquer sur une offre
@@ -114,15 +114,17 @@ def lignes_segm(cellule):
 
 
 # FONCTION DE SIMILARITE
-'''is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+is_github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
 
 
 if is_github_actions:
     # Si c'est GitHub Actions, utilisez un chemin relatif
-    file_path = os.path.join(os.path.dirname(__file__), 'DB_pco', 'array_comp_esco.npy')
-else:'''
-# Sinon, utilisez un chemin absolu (pour votre machine locale)
-file_path = 'C:\\Users\\Utilisateur\\Documents\\Prepa_Diplome\\PCO_dec2\\DB_pco\\array_comp_esco.npy'
+    # file_path = os.path.join(os.path.dirname(__file__), 'DB_pco', 'array_comp_esco.npy')
+    file_path = './DB_pco/array_comp_esco_1000.npy'
+
+else:
+    # Sinon, utilisez un chemin absolu (pour votre machine locale)
+    file_path = 'C:\\Users\\Utilisateur\\Documents\\Prepa_Diplome\\PCO_dec2\\DB_pco\\array_comp_esco.npy'
 
 # Charger le fichier .npy avec le chemin approprié
 array_comp = np.load(file_path, allow_pickle = True)
@@ -136,16 +138,16 @@ index = faiss.IndexFlatL2(vector_dim)
 index.add(vectors_comp)
 
 def best_skill(vector, threshold_skill=0.7):
-    
+
     best_skill = None
     best_score = 0
 
     # Perform a similarity search
     vector = np.array(vector) # il faut repasser vector en array numpy, car on l'a tranformé en list dans le script de l'api
     distances, indices = index.search(vector[None, :], 5)
-    
+
     for indice in indices[0]:
-        
+
         cos_sim = cosine_similarity(vector.reshape(1, -1), vectors_comp[indice].reshape(1, -1))
         cos_sim = round(cos_sim[0][0], 2)
         #cos_sim = 1 - (distances[indice] ** 0.5)
@@ -160,7 +162,7 @@ def best_skill(vector, threshold_skill=0.7):
         return {best_skill: best_score}
     else:
         return {}
-    
+
 
 # CALCUL DES METRIQUES
 def calcul_metrics(y_true, y_pred):
@@ -195,7 +197,7 @@ def calcul_metrics(y_true, y_pred):
     # Extraire uniquement le deuxième élément (la valeur de prédiction)
     y_true_values = [value for _, value in y_true_final]
     y_pred_values = [value for _, value in y_pred_filtered]
-    
+
     accuracy = accuracy_score(y_true_values, y_pred_values)
     precision = precision_score(y_true_values, y_pred_values)
     recall = recall_score(y_true_values, y_pred_values)
@@ -227,7 +229,7 @@ def get_metrics(runs):
             print(f" - {metric_name}: {metric_value}")
             run_metrics[metric_name] = metric_value
         metrics_10runs.append(run_metrics)  # Ajouter le dictionnaire du run à la liste principale
-    
+
     return latest_runs, metrics_10runs
 
 
@@ -243,19 +245,19 @@ def check_performance_degradation(metrics):
     avg_precision = np.mean([m[1] for m in metrics])
     avg_recall = np.mean([m[2] for m in metrics])
     avg_f1 = np.mean([m[3] for m in metrics])
-    
+
     print(f"Moyennes des 10 derniers runs : Accuracy: {avg_accuracy}, Precision: {avg_precision}, Recall: {avg_recall}, F1-score: {avg_f1}")
-    
+
     accuracy_degraded = avg_accuracy < accuracy_ref * (1 - tolerance)
     recall_degraded = avg_recall < recall_ref * (1 - tolerance)
     precision_degraded = avg_precision < precision_ref * (1 - tolerance)
     f1_degraded = avg_f1 < f1_ref * (1 - tolerance)
-    
+
     # Condition de dégradation pour déclencher le réentraînement
     if accuracy_degraded or recall_degraded or precision_degraded or f1_degraded:
         return False  # Dégradation des performances
     else:
-        return True  
+        return True
 
 
 # ENVOI ALERTES
@@ -264,7 +266,7 @@ def check_performance_degradation(metrics):
 def check_alerts():
     client = mlflow.tracking.MlflowClient()
     runs = client.list_run_infos(experiment_id="")
-    
+
     # Récupérer les métriques les plus récentes
     last_run = runs[-1]  # Dernière exécution
     metrics = client.get_run(last_run.run_id).data.metrics
@@ -320,7 +322,7 @@ def delete_training_data_1():
     connection = connect_to_postgres()
     if connection is not None:
         cursor = connection.cursor()
-        
+
         try:
             delete_query_2 = "DELETE FROM table_monitoring_contxt"  # Ajoutez votre condition
             cursor.execute(delete_query_2)
@@ -341,7 +343,7 @@ def delete_training_data_2():
     connection = connect_to_postgres()
     if connection is not None:
         cursor = connection.cursor()
-        
+
         try:
             delete_query_1 = "DELETE FROM table_monitoring_comp"
             cursor.execute(delete_query_1)
